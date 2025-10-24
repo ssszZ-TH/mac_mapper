@@ -1,42 +1,162 @@
-#root {
-  max-width: 1280px;
+/* src/App.css */
+.school-theme {
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  font-family: 'Sarabun', 'Prompt', Arial, sans-serif;
+  background: linear-gradient(135deg, #e6f3ff 0%, #fffbe6 100%);
+  min-height: 100vh;
+  color: #1a3c6b;
+}
+
+header {
   text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #003087;
+  color: #ffd700;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 50, 135, 0.3);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  color: #ffed4e;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.section {
+  margin: 2rem 0;
+  padding: 1.8rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 80, 170, 0.15);
+  border: 2px solid #003087;
 }
 
-.card {
-  padding: 2em;
+h2 {
+  margin-top: 0;
+  color: #003087;
+  font-size: 1.5rem;
+  border-bottom: 3px solid #ffd700;
+  padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
-.read-the-docs {
-  color: #888;
+input {
+  padding: 0.75rem;
+  margin: 0.75rem 0.5rem;
+  width: 260px;
+  border: 2px solid #003087;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f8fbff;
+  color: #1a3c6b;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+button.primary {
+  background: #003087;
+  color: #ffd700;
+}
+
+button.primary:hover {
+  background: #00205b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 48, 135, 0.3);
+}
+
+button.secondary {
+  background: #ffd700;
+  color: #003087;
+}
+
+button.secondary:hover {
+  background: #ffed4e;
+  transform: translateY(-1px);
+}
+
+button.edit {
+  background: #ffd700;
+  color: #003087;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+button.edit:hover {
+  background: #ffed4e;
+}
+
+button.delete {
+  background: #d32f2f;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+button.delete:hover {
+  background: #b71c1c;
+}
+
+.result-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e3f2fd;
+  border: 2px solid #003087;
+  border-radius: 8px;
+  color: #003087;
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+}
+
+th {
+  background: #003087;
+  color: #ffd700;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.9rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background: #f0f8ff;
+}
+
+tr:hover {
+  background: #fff8e1;
 }

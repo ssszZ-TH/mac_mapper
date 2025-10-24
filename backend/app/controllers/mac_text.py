@@ -7,7 +7,6 @@ from app.models.mac_text import (
     delete_mac_text, get_all_mac_text
 )
 from app.schemas.mac_text import MacLookupRequest, MacLookupResponse, MacTextCreate, MacTextUpdate, MacTextOut
-from backend.app.schemas import mac_text
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
