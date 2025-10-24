@@ -1,0 +1,10 @@
+id,description
+1,Limited Company (บริษัทจำกัด)
+2,Public Limited Company (บริษัทมหาชนจำกัด)
+3,Limited Partnership (ห้างหุ้นส่วนจำกัด)
+4,Registered Ordinary Partnership (ห้างหุ้นส่วนสามัญจดทะเบียน)
+5,State Enterprise (รัฐวิสาหกิจ)
+6,Non-Profit Organization (องค์กรไม่แสวงผลกำไร)
+7,Cooperative (สหกรณ์)
+8,Association (สมาคม)
+9,Foundation (มูลนิธิ)

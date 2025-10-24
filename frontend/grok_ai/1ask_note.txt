@@ -1,0 +1,232 @@
+นี่คือ main page เอาไว้สำหรับเป็น router
+
+frontend\src\main.tsx
+
+import React, { lazy, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Loading from "./components/Loading";
+
+// Lazy load pages เพื่อเพิ่มประสิทธิภาพ
+
+
+interface ProtectedRoute {
+  path: string;
+  component: React.LazyExoticComponent<React.FC>;
+}
+
+interface UnprotectedRoute {
+  path: string;
+  component: React.LazyExoticComponent<React.FC>;
+}
+
+// กำหนด array ของ routes สำหรับหน้าเพิ่มเติม
+const protectedroutes: ProtectedRoute[] = [
+  
+];
+
+
+// กำหนด array ของ routes สำหรับหน้าเพิ่มเติม
+const unprotectedroutes: UnprotectedRoute[] = [
+  {path:"/app", component: lazy(() => import("./App"))}
+];
+
+// Render แอปพลิเคชัน
+createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              {/* unprotected routes */}
+              
+              
+              {unprotectedroutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={
+                      <route.component />
+                  }
+                />
+              ))}
+
+              {protectedroutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={
+                    <ProtectedRoute>
+                      <route.component />
+                    </ProtectedRoute>
+                  }
+                />
+              ))}
+              <Route path="*" element={<h1>404 Not Found</h1>} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
+  </React.StrictMode>
+);
+
+frontend\src\pages\login\Login.tsx <-- ใน file นี้ ช่วยทำ login page ให้หน่อย
+
+frontend\src\pages\register\Register.tsx <-- ช่วยทำ register page ให้หน่อย
+
+frontend\src\services\auth.ts <-- เป็น file ที่ไว้รวบรวม function ที่ต้องไปต่อกับ backend
+
+สิ่งที่อยู่ใน file
+import axios from 'axios';
+import Cookies from 'js-cookie';
+const BASE_URL = 'http://localhost:8080';
+
+นี่คือ part ที่ไว้สำหรับ login register ผมจะเอาผลการ test ด้วย postman มาให้นะ
+
+POST {{backend}}/auth/register
+{
+    "username": "sysadmin1",
+    "email": "sysadmin1@example.com",
+    "password": "securepass123",
+    "role": "system_admin"
+}
+{
+    "id": 1,
+    "username": "sysadmin1",
+    "email": "sysadmin1@example.com",
+    "role": "system_admin",
+    "created_at": "2025-08-23T12:11:06.431250",
+    "updated_at": null
+}
+
+POST {{backend}}/auth/login
+{
+    "email": "sysadmin1@example.com",
+    "password": "securepass123"
+}
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InN5c3RlbV9hZG1pbiIsImV4cCI6MTc1NjAzNzcxMH0.i79jAfE96fq1bN1WdnRDHmybwvx-wER6czoE3seKUSc",
+    "token_type": "bearer"
+}
+
+พอ login เสร็จได้ access token
+เอา access token ไป get role
+GET {{backend}}/users/myrole เเนบ JWT bearer token ไปด้วย
+response {
+    "role": "organization_user"
+}
+
+โดย role ทั้งหมดที่มีในระบบมีดังนี้
+'system_admin', 'basetype_admin', 'hr_admin', 'organization_admin', 'organization_user', 'person_user'
+
+เอา access_token, role ไป set ลงใน cookie
+
+set state ใน auth context นี้
+frontend\src\contexts\AuthContext.tsx
+
+import React, { createContext, useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+
+// Interface for AuthContext
+interface AuthContextType {
+  isAuthenticated: boolean;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+  role: string | null;
+  setRole: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+export const AuthContext = createContext<AuthContextType>({
+  isAuthenticated: false,
+  setIsAuthenticated: () => {},
+  role: null,
+  setRole: () => {},
+});
+
+// AuthProvider component
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [role, setRole] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = Cookies.get('access_token');
+    if (token) {
+      setIsAuthenticated(true);
+      setRole(Cookies.get('role') || null);
+    }
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ isAuthenticated,  setIsAuthenticated, role, setRole }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+
+frontend\src\pages\RootPage.tsx <-- นี่คือหน้า rootpage หน้าเเรกที่จะต้องเจอตอนเข้าเว็บครั้งเเรก เป็นหน้าที่ไว้ redirect คนที่เข้าไปหน้าอื่นๆ ต่อไป
+มันจะอ่าน role ใน cookie เเล้ว redirect ไปหาหน้า homepage ของเเต่ละ role
+
+รายการ homepage เเต่ละ role
+frontend\src\pages\homes\BasetypeAdminHome.tsx
+frontend\src\pages\homes\HrAdminHome.tsx
+frontend\src\pages\homes\OrganizationAdminHome.tsx
+frontend\src\pages\homes\OrganizationUserHome.tsx
+frontend\src\pages\homes\PersonUserHome.tsx
+frontend\src\pages\homes\SystemAdminHome.tsx
+
+ทุกๆ หน้าที่ทำ ใช้ ThemeContext นี้นะ 
+frontend\src\contexts\ThemeContext.tsx
+// contexts/ThemeContext.tsx
+
+// Import necessary React hooks and MUI components
+import { createContext, useContext, useState, useMemo } from 'react';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material';
+// Import theme configurations
+import { lightTheme, darkTheme } from '../styles/theme';
+
+// Define the shape (type) of our theme context
+type ThemeContextType = {
+  toggleTheme: () => void;    // Function to switch between themes
+  isDarkMode: boolean;        // Current theme status (true = dark, false = light)
+};
+
+// Create context with default values
+const ThemeContext = createContext<ThemeContextType>({
+  toggleTheme: () => {},      // Empty default toggle function
+  isDarkMode: false,          // Default to light theme
+});
+
+// Custom hook to easily access theme context
+export const useTheme = () => useContext(ThemeContext);
+
+// Theme provider component (wrap around your app)
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  // State to track dark mode status
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  
+  // Memoize theme object to prevent unnecessary recalculations
+  const theme = useMemo(() => 
+    isDarkMode ? darkTheme : lightTheme,  // Choose theme based on mode
+    [isDarkMode]                          // Recalculate only when mode changes
+  );
+
+  // Function to toggle between dark/light modes
+  const toggleTheme = () => {
+    setIsDarkMode((prev) => !prev);  // Flip current state
+  };
+
+  return (
+    // Provide theme context to child components
+    <ThemeContext.Provider value={{ toggleTheme, isDarkMode }}>
+      {/* Apply MUI theme to all children */}
+      <MuiThemeProvider theme={theme}>
+        {children}
+      </MuiThemeProvider>
+    </ThemeContext.Provider>
+  );
+};

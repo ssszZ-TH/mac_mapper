@@ -1,0 +1,76 @@
+from fastapi import APIRouter, HTTPException, Depends
+from fastapi.security import OAuth2PasswordBearer
+from typing import List
+import logging
+from app.models.marital_status_types import create_marital_status_type, get_marital_status_type, update_marital_status_type, delete_marital_status_type, get_all_marital_status_types
+from app.schemas.marital_status_types import MaritalStatusTypeCreate, MaritalStatusTypeUpdate, MaritalStatusTypeOut
+from app.controllers.users.user import get_current_user
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+router = APIRouter(prefix="/marital_status_types", tags=["marital_status_types"])
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
+
+# สร้าง marital_status_type ใหม่ (basetype_admin เท่านั้น)
+@router.post("/", response_model=MaritalStatusTypeOut)
+async def create_marital_status_type_endpoint(marital_status_type: MaritalStatusTypeCreate, current_user: dict = Depends(get_current_user)):
+    if current_user["role"] != "basetype_admin":
+        logger.warning(f"Unauthorized attempt to create marital_status_type by user: id={current_user['id']}, role={current_user['role']}")
+        raise HTTPException(status_code=403, detail="Basetype admin access required")
+    result = await create_marital_status_type(marital_status_type)
+    if not result:
+        logger.warning(f"Failed to create marital_status_type: {marital_status_type.description}")
+        raise HTTPException(status_code=400, detail="Description already exists")
+    logger.info(f"Created marital_status_type: id={result.id}")
+    return result
+
+# ดึงข้อมูล marital_status_type ตาม ID
+@router.get("/{marital_status_type_id}", response_model=MaritalStatusTypeOut)
+async def get_marital_status_type_endpoint(marital_status_type_id: int, current_user: dict = Depends(get_current_user)):
+    if current_user["role"] not in ["basetype_admin", "organization_admin", "organization_user", "hr_admin", "person_user", "system_admin"]:
+        logger.warning(f"Unauthorized attempt to get marital_status_type by id={marital_status_type_id} by user: id={current_user['id']}, role={current_user['role']}")
+        raise HTTPException(status_code=403, detail="Access restricted to basetype_admin, organization_admin, organization_user, hr_admin, person_user, or system_admin")
+    result = await get_marital_status_type(marital_status_type_id)
+    if not result:
+        logger.warning(f"Marital_status_type not found: id={marital_status_type_id}")
+        raise HTTPException(status_code=404, detail="Marital status type not found")
+    logger.info(f"Retrieved marital_status_type: id={marital_status_type_id}")
+    return result
+
+# ดึงข้อมูล marital_status_type ทั้งหมด
+@router.get("/", response_model=List[MaritalStatusTypeOut])
+async def get_all_marital_status_types_endpoint(current_user: dict = Depends(get_current_user)):
+    if current_user["role"] not in ["basetype_admin", "organization_admin", "organization_user", "hr_admin", "person_user", "system_admin"]:
+        logger.warning(f"Unauthorized attempt to list all marital_status_types by user: id={current_user['id']}, role={current_user['role']}")
+        raise HTTPException(status_code=403, detail="Access restricted to basetype_admin, organization_admin, organization_user, hr_admin, person_user, or system_admin")
+    results = await get_all_marital_status_types()
+    logger.info(f"Retrieved {len(results)} marital_status_types")
+    return results
+
+# อัปเดตข้อมูล marital_status_type (basetype_admin เท่านั้น)
+@router.put("/{marital_status_type_id}", response_model=MaritalStatusTypeOut)
+async def update_marital_status_type_endpoint(marital_status_type_id: int, marital_status_type: MaritalStatusTypeUpdate, current_user: dict = Depends(get_current_user)):
+    if current_user["role"] != "basetype_admin":
+        logger.warning(f"Unauthorized attempt to update marital_status_type by id={marital_status_type_id} by user: id={current_user['id']}, role={current_user['role']}")
+        raise HTTPException(status_code=403, detail="Basetype admin access required")
+    result = await update_marital_status_type(marital_status_type_id, marital_status_type)
+    if not result:
+        logger.warning(f"Marital_status_type not found for update: id={marital_status_type_id}")
+        raise HTTPException(status_code=404, detail="Marital status type not found")
+    logger.info(f"Updated marital_status_type: id={marital_status_type_id}")
+    return result
+
+# ลบ marital_status_type (basetype_admin เท่านั้น)
+@router.delete("/{marital_status_type_id}")
+async def delete_marital_status_type_endpoint(marital_status_type_id: int, current_user: dict = Depends(get_current_user)):
+    if current_user["role"] != "basetype_admin":
+        logger.warning(f"Unauthorized attempt to delete marital_status_type by id={marital_status_type_id} by user: id={current_user['id']}, role={current_user['role']}")
+        raise HTTPException(status_code=403, detail="Basetype admin access required")
+    result = await delete_marital_status_type(marital_status_type_id)
+    if not result:
+        logger.warning(f"Marital_status_type not found for deletion: id={marital_status_type_id}")
+        raise HTTPException(status_code=404, detail="Marital status type not found")
+    logger.info(f"Deleted marital_status_type: id={marital_status_type_id}")
+    return {"message": "Marital status type deleted"}

@@ -1,0 +1,6 @@
+id,personal_id_number,first_name,middle_name,last_name,nick_name,birth_date,gender_type_id,marital_status_type_id,country_id,height,weight,racial_type_id,income_range_id,about_me
+14,1234567890123,John,,Doe,JD,1990-05-15,1,1,2,175,70,2,3,Software engineer with a passion for coding.
+15,2345678901234,Jane,Ann,Smith,JS,1988-08-22,2,2,1,165,55,1,4,Marketing specialist who loves traveling.
+16,3456789012345,Mike,,Brown,MB,1995-03-10,1,1,3,180,80,3,2,Avid gamer and graphic designer.
+17,4567890123456,Anna,,Lee,AL,1992-11-30,2,3,4,160,50,1,5,Enjoys hiking and photography.
+18,5678901234567,Somchai,,Jaidee,SJ,1985-07-20,1,2,1,170,65,1,4,Enjoys outdoor activities and tech.

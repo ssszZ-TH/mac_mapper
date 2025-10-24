@@ -1,0 +1,7049 @@
+{
+	"info": {
+		"_postman_id": "abe4840b-7307-4722-99b8-b12c457d7eaa",
+		"name": "party fullstack docker  5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30661481",
+		"_collection_link": "https://crimson-astronaut-524186.postman.co/workspace/Team-Workspace~574fd344-23ec-456b-8d89-76abe7f242fb/collection/30661481-abe4840b-7307-4722-99b8-b12c457d7eaa?action=share&source=collection_link&creator=30661481"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"sysadmin1\",\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"system_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/register",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 method not allow",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"admin1\", \"password\": \"securepass123\", \"email\": \"admin1@example.com\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/register_system_admin",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"register_system_admin"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Thu, 21 Aug 2025 08:10:10 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "allow",
+									"value": "POST"
+								},
+								{
+									"key": "content-length",
+									"value": "31"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Method Not Allowed\"\n}"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"password123\",\r\n    \"email\": \"123@example.com\",\r\n    \"password\": \"password123\",\r\n    \"role\": \"system_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 03:27:37 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "26"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created\"\n}"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"111\",\r\n    \"email\": \"111@example.com\",\r\n    \"password\": \"111\",\r\n    \"role\": \"system_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 03:50:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "26"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created\"\n}"
+						},
+						{
+							"name": "3 auth flow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"sysadmin1\",\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"system_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 06:50:30 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-22T06:50:31.843692\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "4 auth flow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"sysadmin1\",\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"system_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 07:00:23 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-22T07:00:23.744764\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "login sys",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 06:56:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "21"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "Internal Server Error"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 07:11:04 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "189"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InN5c3RlbV9hZG1pbiIsImV4cCI6MTc1NTkzMzA2NX0.GuNDz9o1FFP2Vq5YElvyRxM7lqFhmyb-qT90IegVUyA\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create hr",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hradmin1\",\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"hr_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hradmin1\",\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"hr_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:07:32 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "139"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-22T08:07:34.201598\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "create org admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"orgadmin1\",\r\n    \"email\": \"orgadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"organization_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"orgadmin1\",\r\n    \"email\": \"orgadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"organization_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:08:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "151"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin1\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-22T08:08:47.477699\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "person user regis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"2000-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/persons/register",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"2000-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:36:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 13,\n    \"username\": \"person1\",\n    \"email\": \"person1@example.com\",\n    \"personal_id_number\": \"1234567890123\",\n    \"first_name\": \"John\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"2000-01-01\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 170,\n    \"weight\": 70,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-22T08:36:46.777053\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "org user regis",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"org1\",\r\n    \"email\": \"org1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org One\",\r\n    \"federal_tax_id\": \"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/organizations/register",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"org1\",\r\n    \"email\": \"org1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org One\",\r\n    \"federal_tax_id\": \"987654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/organizations/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:28:26 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "265"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"username\": \"org1\",\n    \"email\": \"org1@example.com\",\n    \"federal_tax_id\": \"987654321\",\n    \"name_en\": \"Org One\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-22T08:28:26.771486\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "login hr",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:39:48 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "184"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwicm9sZSI6ImhyX2FkbWluIiwiZXhwIjoxNzU1OTM4Mzg5fQ.mofIA2n8or69SmCjk64fwY9woMHDpXNCjyLhWmk5sCg\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "hr create person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"person2\",\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"9876543210987\",\r\n    \"first_name\": \"Jane\",\r\n    \"last_name\": \"Smith\",\r\n    \"birth_date\": \"1995-02-02\",\r\n    \"height\": 165,\r\n    \"weight\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/persons",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 use hr to create person omg",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person2\",\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"9876543210987\",\r\n    \"first_name\": \"Jane\",\r\n    \"last_name\": \"Smith\",\r\n    \"birth_date\": \"1995-02-02\",\r\n    \"height\": 165,\r\n    \"weight\": 55\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:41:29 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "415"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 14,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210987\",\n    \"first_name\": \"Jane\",\n    \"middle_name\": null,\n    \"last_name\": \"Smith\",\n    \"nick_name\": null,\n    \"birth_date\": \"1995-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 55,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-22T08:41:29.439005\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "login org admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"orgadmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"orgadmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:42:13 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "197"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicm9sZSI6Im9yZ2FuaXphdGlvbl9hZG1pbiIsImV4cCI6MTc1NTkzODUzNH0.zH2lHVD6BHQ75F_kXT55LD0oCC5LEp4zgLdlJWc7Nso\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "org admin create org user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"org2\", \"email\": \"org2@example.com\", \"password\": \"securepass123\", \"name_en\": \"Org Two\", \"federal_tax_id\": \"123456789\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}\t/organizations",
+							"host": [
+								"{{backend}}\t"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"org2\", \"email\": \"org2@example.com\", \"password\": \"securepass123\", \"name_en\": \"Org Two\", \"federal_tax_id\": \"123456789\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}\t/organizations",
+									"host": [
+										"{{backend}}\t"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:43:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "266"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 15,\n    \"username\": \"org2\",\n    \"email\": \"org2@example.com\",\n    \"federal_tax_id\": \"123456789\",\n    \"name_en\": \"Org Two\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-22T08:43:53.821720\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "login person user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"person1@example.com\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 06:56:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "21"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "Internal Server Error"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 07:11:04 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "189"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InN5c3RlbV9hZG1pbiIsImV4cCI6MTc1NTkzMzA2NX0.GuNDz9o1FFP2Vq5YElvyRxM7lqFhmyb-qT90IegVUyA\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "3 login person user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"person1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:53:43 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "189"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMyIsInJvbGUiOiJwZXJzb25fdXNlciIsImV4cCI6MTc1NTkzOTIyM30.Efc28wM6gBmnELhdCDWSdXZaISYNyHAayA_k28Kz7Lc\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login org user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"org1@example.com\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 06:56:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "21"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "Internal Server Error"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"sysadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 07:11:04 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "189"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InN5c3RlbV9hZG1pbiIsImV4cCI6MTc1NTkzMzA2NX0.GuNDz9o1FFP2Vq5YElvyRxM7lqFhmyb-qT90IegVUyA\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "3 login org user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"org1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:54:02 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "196"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Iiwicm9sZSI6Im9yZ2FuaXphdGlvbl91c2VyIiwiZXhwIjoxNzU1OTM5MjQzfQ.zMqSNpRxvc3cH5JUGBkZf3kNpeEKXGwE7aksLZCLkag\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "sys admin me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:45:15 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-22T08:26:07.098380\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "sys admin get another user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/2",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:48:14 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "139"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-22T08:26:18.308594\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "sys admin list user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Fri, 22 Aug 2025 08:48:42 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "439"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-22T08:26:07.098380\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"hradmin1\",\n        \"email\": \"hradmin1@example.com\",\n        \"role\": \"hr_admin\",\n        \"created_at\": \"2025-08-22T08:26:18.308594\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 3,\n        \"username\": \"orgadmin1\",\n        \"email\": \"orgadmin1@example.com\",\n        \"role\": \"organization_admin\",\n        \"created_at\": \"2025-08-22T08:26:23.800542\",\n        \"updated_at\": null\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth combo test",
+			"item": [
+				{
+					"name": "Register system admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"sysadmin1\",\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"system_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/register",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"sysadmin1\",\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"system_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 12:11:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-23T12:11:06.431250\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login system admin <--",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"sysadmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 12:15:09 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "189"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwicm9sZSI6InN5c3RlbV9hZG1pbiIsImV4cCI6MTc1NjAzNzcxMH0.i79jAfE96fq1bN1WdnRDHmybwvx-wER6czoE3seKUSc\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create hr admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hradmin1\",\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"hr_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hradmin1\",\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"hr_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 12:16:30 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "139"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-23T12:16:30.976295\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Create organization admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"orgadmin1\",\r\n    \"email\": \"orgadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"organization_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"orgadmin1\",\r\n    \"email\": \"orgadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"organization_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 12:43:41 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "151"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin1\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-23T12:43:42.398069\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Create basetype admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"basetypeadmin1\",\r\n    \"email\": \"basetypeadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"basetype_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"basetypeadmin1\",\r\n    \"email\": \"basetypeadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"basetype_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 12:45:12 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "157"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"username\": \"basetypeadmin1\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-23T12:45:13.601014\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all users by system admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 12:46:10 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "597"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-23T12:11:06.431250\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"hradmin1\",\n        \"email\": \"hradmin1@example.com\",\n        \"role\": \"hr_admin\",\n        \"created_at\": \"2025-08-23T12:16:30.976295\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 3,\n        \"username\": \"orgadmin1\",\n        \"email\": \"orgadmin1@example.com\",\n        \"role\": \"organization_admin\",\n        \"created_at\": \"2025-08-23T12:43:42.398069\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 4,\n        \"username\": \"basetypeadmin1\",\n        \"email\": \"basetypeadmin1@example.com\",\n        \"role\": \"basetype_admin\",\n        \"created_at\": \"2025-08-23T12:45:13.601014\",\n        \"updated_at\": null\n    }\n]"
+						},
+						{
+							"name": "2 hr admin updated",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:13:18 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "628"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-23T12:11:06.431250\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"hradmin_updated\",\n        \"email\": \"hradmin1@example.com\",\n        \"role\": \"hr_admin\",\n        \"created_at\": \"2025-08-23T12:16:30.976295\",\n        \"updated_at\": \"2025-08-23T13:12:45.204304\"\n    },\n    {\n        \"id\": 3,\n        \"username\": \"orgadmin1\",\n        \"email\": \"orgadmin1@example.com\",\n        \"role\": \"organization_admin\",\n        \"created_at\": \"2025-08-23T12:43:42.398069\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 4,\n        \"username\": \"basetypeadmin1\",\n        \"email\": \"basetypeadmin1@example.com\",\n        \"role\": \"basetype_admin\",\n        \"created_at\": \"2025-08-23T12:45:13.601014\",\n        \"updated_at\": null\n    }\n]"
+						},
+						{
+							"name": "3 reverted hr admin data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:15:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "621"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-23T12:11:06.431250\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"hradmin1\",\n        \"email\": \"hradmin1@example.com\",\n        \"role\": \"hr_admin\",\n        \"created_at\": \"2025-08-23T12:16:30.976295\",\n        \"updated_at\": \"2025-08-23T13:15:45.702118\"\n    },\n    {\n        \"id\": 3,\n        \"username\": \"orgadmin1\",\n        \"email\": \"orgadmin1@example.com\",\n        \"role\": \"organization_admin\",\n        \"created_at\": \"2025-08-23T12:43:42.398069\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 4,\n        \"username\": \"basetypeadmin1\",\n        \"email\": \"basetypeadmin1@example.com\",\n        \"role\": \"basetype_admin\",\n        \"created_at\": \"2025-08-23T12:45:13.601014\",\n        \"updated_at\": null\n    }\n]"
+						},
+						{
+							"name": "4 org hr admin is deleted",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:45:20 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "329"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-23T12:11:06.431250\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 4,\n        \"username\": \"basetypeadmin1\",\n        \"email\": \"basetypeadmin1@example.com\",\n        \"role\": \"basetype_admin\",\n        \"created_at\": \"2025-08-23T12:45:13.601014\",\n        \"updated_at\": \"2025-08-24T03:21:08.534886\"\n    }\n]"
+						},
+						{
+							"name": "5 basetype admin deleted",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:48:22 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "147"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-23T12:11:06.431250\",\n        \"updated_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get users by system admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/5",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/1",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:15:14 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-23T12:11:06.431250\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:15:25 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "163"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-23T12:16:30.976295\",\n    \"updated_at\": \"2025-08-23T13:15:45.702118\"\n}"
+						},
+						{
+							"name": "3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/3",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:29:36 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "175"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin1\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-23T12:43:42.398069\",\n    \"updated_at\": \"2025-08-24T02:40:03.681433\"\n}"
+						},
+						{
+							"name": "4",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/4",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:29:45 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "181"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"username\": \"basetypeadmin1\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-23T12:45:13.601014\",\n    \"updated_at\": \"2025-08-24T03:21:08.534886\"\n}"
+						},
+						{
+							"name": "1 after create person_user org_user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/5",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"5"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:29:54 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "27"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"User not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin updates hr admin username",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"hradmin_updated\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/2",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"hradmin_updated\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:08:30 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "170"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin_updated\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-23T12:16:30.976295\",\n    \"updated_at\": \"2025-08-23T13:08:30.659948\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin updates hr admin password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\": \"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/2",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"password\": \"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:12:44 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "170"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin_updated\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-23T12:16:30.976295\",\n    \"updated_at\": \"2025-08-23T13:12:45.204304\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login hr admin with new credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"newpass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"newpass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:14:57 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "184"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwicm9sZSI6ImhyX2FkbWluIiwiZXhwIjoxNzU2MDQxMjk3fQ.sglfKDBKnDiMjNwIlGRo7mFLe9wNZPg61fFkFT2REKY\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin reverts hr admin credentials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"hradmin1\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/2",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"hradmin1\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:15:45 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "163"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-23T12:16:30.976295\",\n    \"updated_at\": \"2025-08-23T13:15:45.702118\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login hr admin <-",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:24:09 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "184"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyIiwicm9sZSI6ImhyX2FkbWluIiwiZXhwIjoxNzU2MDkyMjUwfQ.hGIuOJd0AbIsLH5kzTxFX36GLze_U9B8Pdg3Io3HV3E\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin updates org admin username",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"orgadmin_updated\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/3",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"orgadmin_updated\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/3",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 13:18:58 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "182"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin_updated\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-23T12:43:42.398069\",\n    \"updated_at\": \"2025-08-23T13:18:58.454325\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin updates org admin password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\": \"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/3",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"password\": \"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/3",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 18:33:45 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "182"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin_updated\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-23T12:43:42.398069\",\n    \"updated_at\": \"2025-08-23T18:33:46.199155\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login org admin with new credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"orgadmin1@example.com\", \"password\": \"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"orgadmin1@example.com\", \"password\": \"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 18:34:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "197"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicm9sZSI6Im9yZ2FuaXphdGlvbl9hZG1pbiIsImV4cCI6MTc1NjA2MDQ2Mn0.pB5ygXQblk8u3DEoJtmYMTQr9Xhq3FX6KKjpY_to3a4\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin reverts org admin credentials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"orgadmin1\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/3",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"orgadmin1\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/3",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 02:40:02 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "175"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin1\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-23T12:43:42.398069\",\n    \"updated_at\": \"2025-08-24T02:40:03.681433\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login org admin <-",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"orgadmin1@example.com\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"orgadmin1@example.com\", \"password\": \"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sat, 23 Aug 2025 18:34:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "197"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicm9sZSI6Im9yZ2FuaXphdGlvbl9hZG1pbiIsImV4cCI6MTc1NjA2MDQ2Mn0.pB5ygXQblk8u3DEoJtmYMTQr9Xhq3FX6KKjpY_to3a4\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "2 login old credential",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"orgadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 02:42:51 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "197"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicm9sZSI6Im9yZ2FuaXphdGlvbl9hZG1pbiIsImV4cCI6MTc1NjA4OTc3Mn0.7qxI2c8OrS-gQdn7WC8ygAxriTMoK-YeJcVXjhlCpuM\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"orgadmin1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:24:20 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "197"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicm9sZSI6Im9yZ2FuaXphdGlvbl9hZG1pbiIsImV4cCI6MTc1NjA5MjI2MX0._iDWQA1McpWwQPqpLjihlh-DWfGw4n8OZKAagz3COa0\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin updates basetype admin username",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"basetypeadmin_updated\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/4",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"basetypeadmin_updated\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/4",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:13:59 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "188"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"username\": \"basetypeadmin_updated\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-23T12:45:13.601014\",\n    \"updated_at\": \"2025-08-24T03:13:59.315697\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin updates basetype admin password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\": \"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/4",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"password\": \"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/4",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:17:23 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "188"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"username\": \"basetypeadmin_updated\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-23T12:45:13.601014\",\n    \"updated_at\": \"2025-08-24T03:17:24.100205\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login basetype admin with new credentials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"basetypeadmin1@example.com\", \"password\": \"newpass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"basetypeadmin1@example.com\", \"password\": \"newpass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:18:49 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "192"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0Iiwicm9sZSI6ImJhc2V0eXBlX2FkbWluIiwiZXhwIjoxNzU2MDkxOTMwfQ.iiz5r1IXDuZQU31fceCrzxDk8cw913Gij-GN-Fj-hnc\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "System admin reverts basetype admin credentials",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"basetypeadmin1\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users/4",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"basetypeadmin1\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users/4",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:21:07 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "181"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"username\": \"basetypeadmin1\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-23T12:45:13.601014\",\n    \"updated_at\": \"2025-08-24T03:21:08.534886\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login basetype admin <-",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"basetypeadmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"basetypeadmin1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:26:50 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "192"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0Iiwicm9sZSI6ImJhc2V0eXBlX2FkbWluIiwiZXhwIjoxNzU2MDkyNDExfQ.cL4uZvJnh1o6Ts-14FekSUN5RmghUlcHbeUmidY_Oko\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all users by system admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 un auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:28:02 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Bearer"
+								},
+								{
+									"key": "content-length",
+									"value": "30"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not authenticated\"\n}"
+						},
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:28:18 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "669"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"sysadmin1\",\n        \"email\": \"sysadmin1@example.com\",\n        \"role\": \"system_admin\",\n        \"created_at\": \"2025-08-23T12:11:06.431250\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"hradmin1\",\n        \"email\": \"hradmin1@example.com\",\n        \"role\": \"hr_admin\",\n        \"created_at\": \"2025-08-23T12:16:30.976295\",\n        \"updated_at\": \"2025-08-23T13:15:45.702118\"\n    },\n    {\n        \"id\": 3,\n        \"username\": \"orgadmin1\",\n        \"email\": \"orgadmin1@example.com\",\n        \"role\": \"organization_admin\",\n        \"created_at\": \"2025-08-23T12:43:42.398069\",\n        \"updated_at\": \"2025-08-24T02:40:03.681433\"\n    },\n    {\n        \"id\": 4,\n        \"username\": \"basetypeadmin1\",\n        \"email\": \"basetypeadmin1@example.com\",\n        \"role\": \"basetype_admin\",\n        \"created_at\": \"2025-08-23T12:45:13.601014\",\n        \"updated_at\": \"2025-08-24T03:21:08.534886\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "System admin gets own data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}\t/users/me",
+							"host": [
+								"{{backend}}\t"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}\t/users/me",
+									"host": [
+										"{{backend}}\t"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:30:48 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-23T12:11:06.431250\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete hr admin by system admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/2",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 not auth",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:32:12 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "www-authenticate",
+									"value": "Bearer"
+								},
+								{
+									"key": "content-length",
+									"value": "30"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not authenticated\"\n}"
+						},
+						{
+							"name": "2 bug",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:35:45 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "21"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "Internal Server Error"
+						},
+						{
+							"name": "3",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/2",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:38:12 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "26"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete org admin by system admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/3",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/3",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:44:59 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "26"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete basetype admin by system admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/4",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/4",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:47:19 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "26"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Recreate hr admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"hradmin1\",\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"hr_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"hradmin1\",\r\n    \"email\": \"hradmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"hr_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:49:50 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "139"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-24T03:49:52.142971\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Recreate org admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"orgadmin1\", \"email\": \"orgadmin1@example.com\", \"password\": \"securepass123\", \"role\": \"organization_admin\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"orgadmin1\", \"email\": \"orgadmin1@example.com\", \"password\": \"securepass123\", \"role\": \"organization_admin\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:51:04 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "151"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"username\": \"orgadmin1\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-24T03:51:05.343319\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Recreate basetype admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"basetypeadmin1\",\r\n    \"email\": \"basetypeadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"basetype_admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"basetypeadmin1\",\r\n    \"email\": \"basetypeadmin1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"role\": \"basetype_admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:55:40 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "157"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"username\": \"basetypeadmin1\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-24T03:55:41.147159\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "-----user role zone-------",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register person user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/persons/register",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "person org cannot enroll them self",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons/register",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"register"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 03:59:28 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "allow",
+									"value": "GET"
+								},
+								{
+									"key": "content-length",
+									"value": "31"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Method Not Allowed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hr admin creates person user <--",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/persons",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 non hr admin cannot do so",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 04:23:20 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "37"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"HR admin access required\"\n}"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 04:24:35 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "412"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"username\": \"person1\",\n    \"email\": \"person1@example.com\",\n    \"personal_id_number\": \"1234567890123\",\n    \"first_name\": \"John\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1990-01-01\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 170,\n    \"weight\": 70,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T04:24:36.875087\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "3 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 08:17:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "412"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 7,\n    \"username\": \"person1\",\n    \"email\": \"person1@example.com\",\n    \"personal_id_number\": \"1234567890123\",\n    \"first_name\": \"John\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1990-01-01\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 170,\n    \"weight\": 70,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T08:17:06.187533\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "4 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person1\",\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"1234567890123\",\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1990-01-01\",\r\n    \"height\": 170,\r\n    \"weight\": 70\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 08:48:49 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "412"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"username\": \"person1\",\n    \"email\": \"person1@example.com\",\n    \"personal_id_number\": \"1234567890123\",\n    \"first_name\": \"John\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1990-01-01\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 170,\n    \"weight\": 70,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T08:48:50.795681\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login person user <--",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"person1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 04:26:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "188"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4Iiwicm9sZSI6InBlcnNvbl91c2VyIiwiZXhwIjoxNzU2MDk2MDEzfQ.69kQyrUUZNE0ZDZx-4hUv8f-sCq9fBQxZ-au8XQeCEU\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "2 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"person1@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 08:49:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "188"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4Iiwicm9sZSI6InBlcnNvbl91c2VyIiwiZXhwIjoxNzU2MTExNzQ2fQ.BxpGSCPeMAeTwyiuV1hX9SJCGmKM6XjLGj3LnapQ4MM\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "3 try login person 2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 11:49:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "189"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMSIsInJvbGUiOiJwZXJzb25fdXNlciIsImV4cCI6MTc1NjEyMjU0Nn0.VIyAMaZCpxVbk3RMFw4V14pmvbMpdY3NNPLWYCkwa7M\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Organization admin creates org user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"org1\",\r\n    \"email\": \"org1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org One\",\r\n    \"federal_tax_id\": \"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/organizations",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 non assoc admin cannot do so",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"org1\",\r\n    \"email\": \"org1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org One\",\r\n    \"federal_tax_id\": \"987654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/organizations",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 04:31:30 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "47"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Organization admin access required\"\n}"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"org1\",\r\n    \"email\": \"org1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org One\",\r\n    \"federal_tax_id\": \"987654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/organizations",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 04:32:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "265"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"username\": \"org1\",\n    \"email\": \"org1@example.com\",\n    \"federal_tax_id\": \"987654321\",\n    \"name_en\": \"Org One\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-24T04:32:47.706914\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "3 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"org1\",\r\n    \"email\": \"org1@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org One\",\r\n    \"federal_tax_id\": \"987654321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/organizations",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 08:54:44 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "265"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"username\": \"org1\",\n    \"email\": \"org1@example.com\",\n    \"federal_tax_id\": \"987654321\",\n    \"name_en\": \"Org One\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-24T08:54:44.874225\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login organization user <--",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\": \"org1@example.com\", \"password\": \"securepass123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/auth/login",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"org1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 05:55:59 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "196"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Iiwicm9sZSI6Im9yZ2FuaXphdGlvbl91c2VyIiwiZXhwIjoxNzU2MTAxMzYwfQ.eDvzelwaZ2dlH2gGv8k7RBq0MdjlHnlLyvYTg0C7J9c\",\n    \"token_type\": \"bearer\"\n}"
+						},
+						{
+							"name": "2 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"email\": \"org1@example.com\", \"password\": \"securepass123\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/auth/login",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 08:54:57 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "196"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Iiwicm9sZSI6Im9yZ2FuaXphdGlvbl91c2VyIiwiZXhwIjoxNzU2MTEyMDk4fQ.Fxkw8UTzTQTqxE4QzF-a8lCJKKhbXHhNy3xbsCj4wa4\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hr admin creates another person user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"person2\",\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"9876543210123\",\r\n    \"first_name\": \"Jane\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1992-02-02\",\r\n    \"height\": 165,\r\n    \"weight\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/persons",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person2\",\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"9876543210123\",\r\n    \"first_name\": \"Jane\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1992-02-02\",\r\n    \"height\": 165,\r\n    \"weight\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 05:58:06 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Jane\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T05:58:07.645979\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "2 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person2\",\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"9876543210123\",\r\n    \"first_name\": \"Jane\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1992-02-02\",\r\n    \"height\": 165,\r\n    \"weight\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 09:42:05 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Jane\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T09:42:06.729437\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "3 test again",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"person2\",\r\n    \"email\": \"person2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"personal_id_number\": \"9876543210123\",\r\n    \"first_name\": \"Jane\",\r\n    \"last_name\": \"Doe\",\r\n    \"birth_date\": \"1992-02-02\",\r\n    \"height\": 165,\r\n    \"weight\": 60\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 11:36:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Jane\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T11:36:53.274738\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Hr admin gets person user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/persons/11",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/persons/10",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 06:00:09 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Jane\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T05:58:07.645979\",\n    \"updated_at\": null\n}"
+						},
+						{
+							"name": "2 test again",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/persons/11",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 11:38:46 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "413"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Jane\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T11:36:53.274738\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Hr admin gets all persons",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/persons",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/persons",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 06:01:25 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "828"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 8,\n        \"username\": \"person1\",\n        \"email\": \"person1@example.com\",\n        \"personal_id_number\": \"1234567890123\",\n        \"first_name\": \"John\",\n        \"middle_name\": null,\n        \"last_name\": \"Doe\",\n        \"nick_name\": null,\n        \"birth_date\": \"1990-01-01\",\n        \"gender_type_id\": null,\n        \"marital_status_type_id\": null,\n        \"country_id\": null,\n        \"height\": 170,\n        \"weight\": 70,\n        \"racial_type_id\": null,\n        \"income_range_id\": null,\n        \"about_me\": null,\n        \"created_at\": \"2025-08-24T04:24:36.875087\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 10,\n        \"username\": \"person2\",\n        \"email\": \"person2@example.com\",\n        \"personal_id_number\": \"9876543210123\",\n        \"first_name\": \"Jane\",\n        \"middle_name\": null,\n        \"last_name\": \"Doe\",\n        \"nick_name\": null,\n        \"birth_date\": \"1992-02-02\",\n        \"gender_type_id\": null,\n        \"marital_status_type_id\": null,\n        \"country_id\": null,\n        \"height\": 165,\n        \"weight\": 60,\n        \"racial_type_id\": null,\n        \"income_range_id\": null,\n        \"about_me\": null,\n        \"created_at\": \"2025-08-24T05:58:07.645979\",\n        \"updated_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Hr admin updates person user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"banana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/persons/11",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Janet\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}\t/persons/10",
+									"host": [
+										"{{backend}}\t"
+									],
+									"path": [
+										"persons",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 06:02:29 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "438"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Janet\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T05:58:07.645979\",\n    \"updated_at\": \"2025-08-24T06:02:30.348140\"\n}"
+						},
+						{
+							"name": "2 test again",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Janet\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons/10",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 09:54:26 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "438"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"Janet\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T09:42:06.729437\",\n    \"updated_at\": \"2025-08-24T09:54:26.818176\"\n}"
+						},
+						{
+							"name": "3 test again",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"banana\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}\t/persons/10",
+									"host": [
+										"{{backend}}\t"
+									],
+									"path": [
+										"persons",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 10:04:29 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "439"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 10,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"banana\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T09:42:06.729437\",\n    \"updated_at\": \"2025-08-24T10:04:30.110237\"\n}"
+						},
+						{
+							"name": "4 test again",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"banana\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/persons/11",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:01:43 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "439"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 11,\n    \"username\": \"person2\",\n    \"email\": \"person2@example.com\",\n    \"personal_id_number\": \"9876543210123\",\n    \"first_name\": \"banana\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1992-02-02\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 165,\n    \"weight\": 60,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T11:36:53.274738\",\n    \"updated_at\": \"2025-08-24T12:01:44.108199\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hr admin deletes person user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/persons/11",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"persons",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/persons/10",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"10"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 06:04:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "21"
+								},
+								{
+									"key": "content-type",
+									"value": "text/plain; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "Internal Server Error"
+						},
+						{
+							"name": "2 succ",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/persons/10",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 06:14:28 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "28"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Person deleted\"\n}"
+						},
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/persons/11",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"persons",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:05:53 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "28"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Person deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Organization admin creates another org user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"org2\",\r\n    \"email\": \"org2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org Two\",\r\n    \"federal_tax_id\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/organizations",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"org2\",\r\n    \"email\": \"org2@example.com\",\r\n    \"password\": \"securepass123\",\r\n    \"name_en\": \"Org Two\",\r\n    \"federal_tax_id\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/organizations",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:11:38 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "266"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"username\": \"org2\",\n    \"email\": \"org2@example.com\",\n    \"federal_tax_id\": \"123456789\",\n    \"name_en\": \"Org Two\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-24T12:11:39.779701\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Organization admin gets org user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/organizations/12",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/organizations/12",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:13:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "266"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"username\": \"org2\",\n    \"email\": \"org2@example.com\",\n    \"federal_tax_id\": \"123456789\",\n    \"name_en\": \"Org Two\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-24T12:11:39.779701\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Organization admin gets all orgs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/organizations",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/organizations",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:14:22 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "534"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 9,\n        \"username\": \"org1\",\n        \"email\": \"org1@example.com\",\n        \"federal_tax_id\": \"987654321\",\n        \"name_en\": \"Org One\",\n        \"name_th\": null,\n        \"organization_type_id\": null,\n        \"industry_type_id\": null,\n        \"employee_count\": null,\n        \"slogan\": null,\n        \"created_at\": \"2025-08-24T08:54:44.874225\",\n        \"updated_at\": null\n    },\n    {\n        \"id\": 12,\n        \"username\": \"org2\",\n        \"email\": \"org2@example.com\",\n        \"federal_tax_id\": \"123456789\",\n        \"name_en\": \"Org Two\",\n        \"name_th\": null,\n        \"organization_type_id\": null,\n        \"industry_type_id\": null,\n        \"employee_count\": null,\n        \"slogan\": null,\n        \"created_at\": \"2025-08-24T12:11:39.779701\",\n        \"updated_at\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Organization admin updates org user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name_en\": \"Org Two Updated\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/organizations/12",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"name_en\": \"Org Two Updated\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/organizations/12",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:15:54 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "298"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 12,\n    \"username\": \"org2\",\n    \"email\": \"org2@example.com\",\n    \"federal_tax_id\": \"123456789\",\n    \"name_en\": \"Org Two Updated\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-24T12:11:39.779701\",\n    \"updated_at\": \"2025-08-24T12:15:55.693992\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Organization admin deletes org user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/organizations/12",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"organizations",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/organizations/12",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"organizations",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:17:57 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "34"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Organization deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Unauthorized user creation by hr admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"testuser\", \"email\": \"testuser@example.com\", \"password\": \"securepass123\", \"role\": \"hr_admin\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{backend}}/users",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 admin do out of its role",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"testuser\", \"email\": \"testuser@example.com\", \"password\": \"securepass123\", \"role\": \"hr_admin\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{backend}}/users",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:19:52 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "41"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"System admin access required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "---- get me zone ----",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "system me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 13:12:56 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "145"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"username\": \"sysadmin1\",\n    \"email\": \"sysadmin1@example.com\",\n    \"role\": \"system_admin\",\n    \"created_at\": \"2025-08-24T07:34:55.996193\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "hr me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 13:13:40 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "139"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"username\": \"hradmin1\",\n    \"email\": \"hradmin1@example.com\",\n    \"role\": \"hr_admin\",\n    \"created_at\": \"2025-08-24T08:02:59.569521\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "org admin me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 12:24:54 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "151"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"username\": \"orgadmin1\",\n    \"email\": \"orgadmin1@example.com\",\n    \"role\": \"organization_admin\",\n    \"created_at\": \"2025-08-24T08:03:02.451774\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "base me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 13:16:23 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "157"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"username\": \"basetypeadmin1\",\n    \"email\": \"basetypeadmin1@example.com\",\n    \"role\": \"basetype_admin\",\n    \"created_at\": \"2025-08-24T08:03:05.362651\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "person me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 13:19:38 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "412"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"username\": \"person1\",\n    \"email\": \"person1@example.com\",\n    \"personal_id_number\": \"1234567890123\",\n    \"first_name\": \"John\",\n    \"middle_name\": null,\n    \"last_name\": \"Doe\",\n    \"nick_name\": null,\n    \"birth_date\": \"1990-01-01\",\n    \"gender_type_id\": null,\n    \"marital_status_type_id\": null,\n    \"country_id\": null,\n    \"height\": 170,\n    \"weight\": 70,\n    \"racial_type_id\": null,\n    \"income_range_id\": null,\n    \"about_me\": null,\n    \"created_at\": \"2025-08-24T08:48:50.795681\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "org me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/me",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/me",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 13:20:21 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "265"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9,\n    \"username\": \"org1\",\n    \"email\": \"org1@example.com\",\n    \"federal_tax_id\": \"987654321\",\n    \"name_en\": \"Org One\",\n    \"name_th\": null,\n    \"organization_type_id\": null,\n    \"industry_type_id\": null,\n    \"employee_count\": null,\n    \"slogan\": null,\n    \"created_at\": \"2025-08-24T08:54:44.874225\",\n    \"updated_at\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "my role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{backend}}/users/myrole",
+							"host": [
+								"{{backend}}"
+							],
+							"path": [
+								"users",
+								"myrole"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{backend}}/users/myrole",
+									"host": [
+										"{{backend}}"
+									],
+									"path": [
+										"users",
+										"myrole"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "date",
+									"value": "Sun, 24 Aug 2025 16:14:37 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "28"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"role\": \"organization_user\"\n}"
+						}
+					]
+				}
+			],
+			"description": "chat gen วิธีการ test มาให้หมดเเล้ว เรียงไปเลย เรื่อง auth ทุก role เเล้วก็เอาเเต่ละ role มาจัดการ account ของ user ทั้งประเภท organization_user, person_user"
+		}
+	]
+}
