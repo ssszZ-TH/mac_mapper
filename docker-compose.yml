@@ -19,8 +19,8 @@ services:
       - ./staticData:/staticData
     environment:
       POSTGRES_DB: myapp
-      POSTGRES_USER: spa
-      POSTGRES_PASSWORD: spa
+      POSTGRES_USER: may
+      POSTGRES_PASSWORD: may
     networks:
       - partymodelnet3
     ports:
