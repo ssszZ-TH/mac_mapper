@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.config.database import database
 
-from app.controllers.countries import router as counties_router
+from app.controllers.mac_text import router as mac_text_router
 
 
 load_dotenv()
@@ -28,7 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# app.include_router(counties_router)
+app.include_router(mac_text_router)
 
 
 @app.get("/")
