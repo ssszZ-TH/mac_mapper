@@ -3,10 +3,10 @@ from fastapi import APIRouter, HTTPException
 from typing import List
 import logging
 from app.models.mac_text import (
-    create_mac_text, get_mac_text, update_mac_text,
+    create_mac_text, get_description_by_mac, get_mac_text, update_mac_text,
     delete_mac_text, get_all_mac_text
 )
-from app.schemas.mac_text import MacTextCreate, MacTextUpdate, MacTextOut
+from app.schemas.mac_text import MacLookupRequest, MacLookupResponse, MacTextCreate, MacTextUpdate, MacTextOut
 from backend.app.schemas import mac_text
 
 logging.basicConfig(level=logging.INFO)
@@ -45,3 +45,11 @@ async def delete(mac_id: int):
     if not result:
         raise HTTPException(status_code=404, detail="Not found")
     return {"message": "Deleted"}
+
+# app/controllers/mac_text.py (เพิ่ม endpoint)
+@router.post("/lookup", response_model=MacLookupResponse)
+async def lookup_description(request: MacLookupRequest):
+    description = await get_description_by_mac(request.mac_address)
+    if not description:
+        raise HTTPException(status_code=404, detail="MAC address not found")
+    return MacLookupResponse(description=description)

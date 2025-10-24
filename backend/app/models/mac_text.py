@@ -66,3 +66,9 @@ async def delete_mac_text(mac_id: int) -> Optional[int]:
         query = "DELETE FROM mac_text WHERE id = :id RETURNING id"
         result = await database.fetch_one(query=query, values={"id": mac_id})
         return result["id"] if result else None
+    
+# app/models/mac_text.py (เพิ่ม)
+async def get_description_by_mac(mac_address: str) -> Optional[str]:
+    query = "SELECT description FROM mac_text WHERE mac_address = :mac_address"
+    result = await database.fetch_one(query=query, values={"mac_address": mac_address})
+    return result["description"] if result else None

@@ -17,3 +17,9 @@ class MacTextOut(BaseModel):
 
     class Config:
         from_attributes = True
+        
+class MacLookupRequest(BaseModel):
+    mac_address: str
+
+class MacLookupResponse(BaseModel):
+    description: str
