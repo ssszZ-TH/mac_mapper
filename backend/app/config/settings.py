@@ -12,7 +12,7 @@ SECRET_KEY = "8c2f7a9b3d6e1f0c4a8b2d5e7f9a1c3b6d8e0f2a4b7c9d1e3f5a8b0c2d4e6f"
 ALGORITHM = "HS256"
 BCRYPT_SALT = "$2b$12$zDZMoHsxUdSvpuNJjEzsve"
 ACCESS_TOKEN_EXPIRE_MINUTES = 1440  # 1 day in minutes
-ALLOWED_ORIGINS = ["http://localhost:5173"]
+ALLOWED_ORIGINS = ["*"]
 ALLOWED_METHODS = ["GET", "POST", "PUT", "DELETE"]
 
 logger.info(f"Loaded BCRYPT_SALT: {BCRYPT_SALT}")

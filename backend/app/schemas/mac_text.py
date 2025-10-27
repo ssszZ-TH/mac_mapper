@@ -1,4 +1,4 @@
-# app/schemas/mac_text.py
+# backend/app/schemas/mac_text.py
 from pydantic import BaseModel
 from typing import Optional
 
@@ -23,3 +23,4 @@ class MacLookupRequest(BaseModel):
 
 class MacLookupResponse(BaseModel):
     description: str
+    token: str
