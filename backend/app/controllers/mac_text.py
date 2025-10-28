@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 from typing import List
 import logging
 from app.models.mac_text import (
-    create_mac_text, get_description_by_mac, get_mac_text, update_mac_text,
+    create_mac_text, get_sensor_info_by_mac, get_mac_text, update_mac_text,
     delete_mac_text, get_all_mac_text, generate_token_from_mac
 )
 from app.schemas.mac_text import MacLookupRequest, MacLookupResponse, MacTextCreate, MacTextUpdate, MacTextOut
@@ -17,7 +17,7 @@ router = APIRouter(prefix="/mac-text", tags=["mac-text"])
 async def create(item: MacTextCreate):
     result = await create_mac_text(item)
     if not result:
-        raise HTTPException(status_code=400, detail="MAC address already exists")
+        raise HTTPException(status_code=400, detail="MAC address or sensor_code already exists")
     return result
 
 @router.get("/{mac_id}", response_model=MacTextOut)
@@ -47,8 +47,12 @@ async def delete(mac_id: int):
 
 @router.post("/lookup", response_model=MacLookupResponse)
 async def lookup_description(request: MacLookupRequest):
-    description = await get_description_by_mac(request.mac_address)
-    if not description:
+    info = await get_sensor_info_by_mac(request.mac_address)
+    if not info:
         raise HTTPException(status_code=404, detail="MAC address not found")
     token = generate_token_from_mac(request.mac_address)
-    return MacLookupResponse(description=description, token=token)
+    return MacLookupResponse(
+        sensor_name=info["sensor_name"],
+        sensor_code=info["sensor_code"],
+        token=token
+    )
