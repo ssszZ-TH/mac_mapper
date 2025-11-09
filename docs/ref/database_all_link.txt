@@ -1,8 +1,0 @@
-https://blog.witchayut.com/data-model/
-https://aws.amazon.com/what-is/data-modeling/
-https://bdi.or.th/en/big-data-101-en/choosing-your-right-database/
-https://www.ict.up.ac.th/rattanawadeep/dw/chapter5.pdf
-https://medium.com/netbay-developer/basic-database-system-part-1-database-database-model-dbms-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3-b7506e3fad24
-https://www.dittothailand.com/en/dittonews/what-is-database/
-https://www.nsm.or.th/nsm/th/node/5769
-https://introduction-database.blogspot.com/p/blog-page_45.html

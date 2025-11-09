@@ -170,7 +170,32 @@ function App() {
                 <td>{item.mac_address}</td>
                 <td>{item.sensor_code}</td>
                 <td>{item.sensor_name}</td>
-                <td>{new Date(item.created_at).toLocaleString('th-TH')}</td>
+                <td>
+                  {new Date(item.created_at).toLocaleString('th-TH', {
+                    timeZone: 'UTC',
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                  })}
+                </td>
+                <td>
+                  {item.updated_at
+                    ? new Date(item.updated_at).toLocaleString('th-TH', {
+                      timeZone: 'UTC',
+                      year: 'numeric',
+                      month: 'numeric',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                      second: '2-digit',
+                      hour12: false
+                    })
+                    : '-'}
+                </td>
                 <td>
                   <button onClick={() => startEdit(item)} className="edit">แก้ไข</button>
                   <button onClick={() => remove(item.id)} className="delete">ลบ</button>

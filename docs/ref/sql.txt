@@ -1,6 +1,0 @@
-https://www.devart.com/dbforge/sql/sqlcomplete/crud-operations-in-sql.html
-https://retool.com/blog/crud-operations-sql
-https://www.geeksforgeeks.org/dbms/sql-server-crud-operations/
-https://herovired.com/learning-hub/topics/crud-operations-in-sql/
-https://www.sqlshack.com/crud-operations-in-sql-server/
-https://www.w3schools.com/sql/

@@ -1,6 +1,0 @@
-id,title,detail,from_user_id,to_user_id,contact_mechanism_type_id,communication_event_status_type_id
-1,Project Inquiry,Discussing new software project,9,14,1,1
-2,Complaint,Issue with product delivery,14,15,2,2
-3,Order Confirmation,Order #1234 confirmed,10,14,3,3
-4,Meeting Request,Schedule a consultation,15,9,4,1
-5,Feedback,Positive feedback on service,14,10,1,3
